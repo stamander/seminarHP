@@ -3,11 +3,22 @@ services:
   db:
     image: postgres
     ports:
-      - '5432:5432' # ホストからゲストへポートフォワード
+      - '3306:3306' # ホストからゲストへポートフォワード
     volumes:
       - postgresql-data:/var/lib/postgresql/data
     environment:
       POSTGRES_PASSWORD: password
+
+  # db:
+  #   image: mysql:5.7
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: password
+  #     MYSQL_DATABASE: root
+  #   ports:
+  #     - "3306:3306"
+  #   volumes:
+  #     - ./tmp/db:/var/lib/mysql
+
   web:
     build:
       context: .
@@ -24,3 +35,4 @@ services:
 volumes:
   postgresql-data:
     driver: local
+
