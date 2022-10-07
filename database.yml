@@ -3,14 +3,15 @@ default: &default
   encoding: unicode
   host: db
   username: postgres
-  password:
+  password: password
   pool: 5
+  socket: /var/lib/mysql/mysql.sock
 
 development:
   <<: *default
-  database: myproject_development
+  database: SEMINARHP_development
 
 test:
   <<: *default
-  database: myproject_test
+  database: SEMINARHP_test
   
