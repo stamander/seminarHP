@@ -8,8 +8,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-      # - ./tmp/db:/var/lib/mysql
-       - /var/lib/mysql/mysql.sock
+      - ./tmp/db:/var/lib/mysql
 
 
   web:
