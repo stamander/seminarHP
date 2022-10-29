@@ -1,7 +1,15 @@
-FROM ryz310/rails-on-docker
+FROM ruby:2.5.5
+ENV LANG C.UTF-8
 
-WORKDIR /myapp
-ENV BUNDLE_JOBS=32
-COPY Gemfile Gemfile.lock /myapp/
-RUN gem install bundler -v 2.0.1
-COPY . /myapp
+RUN apt-get update -qq && \
+    apt-get install -y build-essential libpq-dev nodejs     
+
+RUN gem install bundler -v 2.0.2
+
+WORKDIR /tmp
+ADD Gemfile Gemfile
+ADD Gemfile.lock Gemfile.lock
+RUN bundle install
+
+WORKDIR /MyApp
+COPY . /MyApp
