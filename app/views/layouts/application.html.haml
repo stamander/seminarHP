@@ -2,6 +2,7 @@
 %html
   %head
     %title 法政大学社会学部諸上ゼミのリダイレクトページ
+    %meta{content: "noindex", name: "robots"}/
     %meta{charset: "utf-8"}
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', data:{ turbolinks:{ track: true }}
@@ -10,6 +11,7 @@
     %script{ type: "text/javascript", src: "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"}
     
 
+    %meta{:content => "KQm9ykT9tTzZ8zDQgkkuUm3ieJ5IVNzC0fj31Lsc1JM", :name => "google-site-verification"}/
 
   %body
     = yield
