@@ -21,9 +21,9 @@
 
 
 
-if(navigator.userAgent.match(/(iPhone|Android)/)){
-  setTimeout(function(){
-    $(".title").css("margin","20px 20px")
-    $(".title").css("text-align","left")
-  },500)
-  }
+setTimeout(function(){
+  if(navigator.userAgent.match(/(iPhone|Android)/)){
+      $(".title").css("margin","20px 20px")
+      $(".title").css("text-align","left")
+    }
+},1000)
